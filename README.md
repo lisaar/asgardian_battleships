@@ -1,3 +1,5 @@
+![Asgard](http://img1.wikia.nocookie.net/__cb20131207032431/disney/images/0/0b/Asgard.jpg "Asgard")
+
 ###Asgardian Battleships
 Each player gets a board with 2 grids.
 	Each grid is 10x10
