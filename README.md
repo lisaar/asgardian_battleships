@@ -1,4 +1,4 @@
-Asgardian Battleships
+###Asgardian Battleships
 Each player gets a board with 2 grids.
 	Each grid is 10x10
 		rows from A-J
@@ -35,6 +35,26 @@ Allow each player to shoot at the opponents board in turn
 	The cell responds as a hit or a miss
 	Tells player if they have sunk a ship and how many ships remain to be sunk
 	Play passes to next person
+
+### Visual aid
+|    | A  | B  | C  | D  | E  | F  | G  | H  | I  | J  |
+| 01 | ~  | h2 | h2 | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
+| 02 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
+| 03 | t3 | t3 | t3 | ~  | fx | f4 | f4 | f4 | ~  | ~  |
+| 04 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
+| 05 | ~  | ~  | l3 | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
+| 06 | ~  | ~  | l3 | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
+| 07 | ~  | ~  | l3 | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
+| 08 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
+| 09 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
+| 10 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
+
+Hawkeye length: 2
+Thor length: 3
+Loki length: 3
+Fury length: 4
+Odin length: 5
+
 
 ###Grid
 | **Responsibility** | Collaborators 					 |
