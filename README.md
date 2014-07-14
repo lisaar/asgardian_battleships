@@ -1,5 +1,5 @@
 Asgardian Battleships
-Each player gets a board with 2 grids. 
+Each player gets a board with 2 grids.
 	Each grid is 10x10
 		rows from A-J
 		columns from 1  -10
@@ -36,5 +36,47 @@ Allow each player to shoot at the opponents board in turn
 	Tells player if they have sunk a ship and how many ships remain to be sunk
 	Play passes to next person
 
+###Grid
+| **Responsibility** | Collaborators 					 |
+| ------------------ | --------------------------------- |
+| Contains | 100 cells |
+| Has rows organised by | letters |
+| Has cols organised by | numbers |
+| Organises | Ships
+| Can be a 'home' | Grid |
+| Can be an 'away' | Grid |
 
 
+###Players
+| **Responsibility** | Collaborators 					 |
+| ------------------ | --------------------------------- |
+| Has | Board |
+| Has | Ships |
+| Play | Game |
+| Wins/Loses | Game |
+| Can view | Home Grid |
+| Can view | Away Grid |
+| Knows how many | Ships left |
+| Knows which | Ships left |
+| Knows how many | ships sunk |
+| Knows when | Game over |
+
+
+###Cell
+| **Responsibility** | Collaborators 					 |
+| ------------------ | --------------------------------- |
+| To be initiated | as empty |
+| To hold | A ship |
+| To receive | a hit/miss |
+| To record | a hit/miss |
+| To know it's position | within the grid |
+
+
+###Ship
+| **Responsibility** | Collaborators 					 |
+| ------------------ | --------------------------------- |
+| Have | Set Lengths |
+| Can be placed | On grid |
+| Have a | name |
+| Receive | Hit |
+| Knows when | Sunk |
