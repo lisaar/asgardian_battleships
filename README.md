@@ -37,6 +37,7 @@ Allow each player to shoot at the opponents board in turn
 	Play passes to next person
 
 ### Visual aid
+`````````
 |    | A  | B  | C  | D  | E  | F  | G  | H  | I  | J  |
 | 01 | ~  | h2 | h2 | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
 | 02 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
@@ -48,6 +49,7 @@ Allow each player to shoot at the opponents board in turn
 | 08 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
 | 09 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
 | 10 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
+``````````
 
 Hawkeye length: 2
 Thor length: 3
