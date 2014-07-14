@@ -2,7 +2,7 @@ Asgardian Battleships
 Each player gets a board with 2 grids.
 	Each grid is 10x10
 		rows from A-J
-		columns from 1  -10
+		columns from 1  to 10.
 	The grid is made up of cells
 		cells are initailized with "water" status
 		cells can adopt "ship" status
