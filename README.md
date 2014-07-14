@@ -52,53 +52,85 @@ Allow each player to shoot at the opponents board in turn
 ``````````
 
 Hawkeye length: 2
+
 Thor length: 3
+
 Loki length: 3
+
 Fury length: 4
+
 Odin length: 5
 
-
-###Grid
-| **Responsibility** | Collaborators 					 |
+### CRC
+####Grid
+| Responsibility     | Collaborators 					 |
 | ------------------ | --------------------------------- |
-| Contains | 100 cells |
-| Has rows organised by | letters |
-| Has cols organised by | numbers |
-| Organises | Ships
-| Can be a 'home' | Grid |
-| Can be an 'away' | Grid |
+| Contains 100 | Cells |
+| Contains a | Ship |
+| Should know how many are left | Ships |
 
 
-###Players
-| **Responsibility** | Collaborators 					 |
+####Cell
+| Responsibility     | Collaborators 					 |
 | ------------------ | --------------------------------- |
-| Has | Board |
+| Should know it holds a | ship |
+| Receive hit from | player |
+| Record hit/miss from | player |
+| Know it's position on | grid |
+
+
+####Players
+| Responsibility     | Collaborators 					 |
+| ------------------ | --------------------------------- |
+| Organises (on grid) | Ships / Grid |
 | Has | Ships |
-| Play | Game |
-| Wins/Loses | Game |
-| Can view | Home Grid |
-| Can view | Away Grid |
-| Knows how many | Ships left |
-| Knows which | Ships left |
-| Knows how many | ships sunk |
-| Knows when | Game over |
+| Attacks | Ships |
+| Knows which ships are sunk | Ships/grid
+| Knows which ships are left | Ships/grid
 
 
-###Cell
-| **Responsibility** | Collaborators 					 |
+####Ships
+| Responsibility     | Collaborators 					 |
 | ------------------ | --------------------------------- |
-| To be initiated | as empty |
-| To hold | A ship |
-| To receive | a hit/miss |
-| To record | a hit/miss |
-| To know it's position | within the grid |
+| Can be placed on | grid |
+| Receives hits from | cell |
+| Knows its location on | grid |
 
 
-###Ship
-| **Responsibility** | Collaborators 					 |
-| ------------------ | --------------------------------- |
-| Have | Set Lengths |
-| Can be placed | On grid |
-| Have a | name |
-| Receive | Hit |
-| Knows when | Sunk |
+### Methods overview...
+####Grid
+* Contains 100 cells
+* Has rows organised by letters
+* Has cols organised by numbers
+* Organises Ship
+* Can be a 'home' Grid
+* Can be an 'away' Grid
+
+
+####Players
+* Has Board
+* Has Ships
+* Play Game
+* Wins/Loses Game
+* Can view Home Grid
+* Can view Away Grid
+* Knows how many Ships left
+* Knows which Ships left
+* Knows how many ships sunk
+* Knows when Game over
+
+
+####Cell
+* To be initiated as empty
+* To hold A ship
+* To receive a hit/miss
+* To record a hit/miss
+* To know it's position within the grid
+
+
+####Ship
+* Have Set Lengths
+* Can be placed On grid
+* Have a name
+* Receive Hit
+* Knows when Sunk
