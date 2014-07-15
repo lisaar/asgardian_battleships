@@ -14,6 +14,10 @@ class Ship
 		@name
 	end
 
+	def hit!
+		@length -= 1
+	end
+
 	def status
 		"hit"
 	end
