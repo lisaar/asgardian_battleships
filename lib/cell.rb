@@ -1,24 +1,18 @@
+require_relative 'water'
+require_relative 'ship'
+
 class Cell
-	def initialize
-		@status = :water
-		@attack_status = :unattacked
+
+	def initialize(contents)
+		@contents = contents
 	end
 
-	def status
-		@status
+	def contents
+		@contents
 	end
 
-	def contain_ship
-		@status = :ship
-	end
-
-	def attack_status
-		@attack_status
-	end
-
-	def attack!
-		@attack_status = :miss if @status == :water
-		@attack_status = :hit if @status == :ship
+	def hit_cell!
+		@contents = @contents.hit!
 	end
 
 end

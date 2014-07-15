@@ -2,42 +2,30 @@ require 'cell'
 
 describe Cell do
 
-	let(:cell) {Cell.new}
+	let(:water) { Water.new }
+	let(:cell) { Cell.new(water) }
+	let(:ship) { Ship.new(:length => 5, :name => "Odin") }
+	let(:cell_with_ship) { Cell.new(ship) }
 
-	it 'its initial status is water' do 
-		expect(cell.status).to eq :water 
+	it 'it contains water' do
+		expect(cell.contents).to eq water
 	end
 
-	it 'can have the status of contain_ship' do
-		cell.contain_ship
-		expect(cell.status).to eq :ship
+	it 'can contain a ship' do
+		expect(cell_with_ship.contents).to eq ship
 	end
 
-	it 'initially hasn\'t been attacked' do
-		expect(cell.attack_status).to eq :unattacked
+	it 'it handles an hit on water' do
+		expect(cell.contents).to eq water
+		cell.hit_cell!
+		expect(cell.contents).to eq :miss
 	end
 
-	it 'can be attacked' do
-		cell.attack!
-		expect(cell.attack_status).not_to eq :unattacked
+	it 'handles a hit on a ship' do
+		expect(cell_with_ship.contents).to eq ship
+		cell_with_ship.hit_cell!
+		expect(cell_with_ship.contents).to eq ship
 	end
-
-	it 'cell with water status can be attacked and not hit a ship' do
-		cell.attack!
-		expect(cell.attack_status).to eq :miss
-	end
-
-	it 'cell with ship status can be attacked and hit a ship' do
-		cell.contain_ship
-		cell.attack!
-		expect(cell.attack_status).to eq :hit
-	end
-
-# Player says 'attack cell (this coord)!'
-# the method attack_cell(coord) runs
-# attack_cell(coord) do
-#  Cell.attack!
-# end
 
 end
 

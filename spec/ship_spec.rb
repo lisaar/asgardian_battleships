@@ -2,10 +2,10 @@ require 'ship'
 
 
 describe Ship do
-	
+
 	let(:ship) {Ship.new(:length => 5, :name => "Odin")}
 
-	it 'has a length' do  
+	it 'has a length' do
 		expect(ship.length).to eq 5
 	end
 
