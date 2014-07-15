@@ -18,13 +18,13 @@ describe Cell do
 	it 'it handles an hit on water' do
 		expect(cell.contents).to eq water
 		cell.hit_cell!
-		expect(cell.contents).to eq :miss
+		expect{ cell.hit_cell! }.to raise_error(RuntimeError)
 	end
 
 	it 'handles a hit on a ship' do
 		expect(cell_with_ship.contents).to eq ship
 		cell_with_ship.hit_cell!
-		expect(cell_with_ship.contents).to eq ship
+		expect{ cell_with_ship.hit_cell! }.to raise_error(RuntimeError)
 	end
 
 end

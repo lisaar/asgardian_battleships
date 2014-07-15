@@ -1,5 +1,6 @@
 require_relative 'water'
 require_relative 'ship'
+require_relative 'shotatcell'
 
 class Cell
 
@@ -12,7 +13,7 @@ class Cell
 	end
 
 	def hit_cell!
-		@contents = @contents.hit!
+		@contents = ShotAtCell.new(@contents.hit!)
 	end
 
 end
