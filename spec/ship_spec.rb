@@ -28,4 +28,14 @@ describe Ship do
 		ship.hit!
 		expect(ship.length).to eq 4
 	end
+
+	it 'is destroyed when length becomes 0' do
+		sunk_ship = Ship.new(:length => 1, :name => "sunken ship")
+		sunk_ship.hit!
+		expect(sunk_ship.destroyed).to be true
+	end
+
+	xit 'is not destroyed when length is greater than 0' do
+		expect(ship.destroyed?).not_to be true
+	end
 end
