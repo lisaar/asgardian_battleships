@@ -1,13 +1,15 @@
 require 'ship'
 
+
 describe Ship do
+	
+	let(:ship) {Ship.new(:length => 5, :name => "Odin")}
+
 	it 'has a length' do  
-		ship = Ship.new(:length => 5, :name => "Odin")
 		expect(ship.length).to eq 5
 	end
 
 	it 'has a name' do
-		ship = Ship.new(:length => 5, :name => "Odin")
 		expect(ship.name).to eq 'Odin'
 	end
 
@@ -17,10 +19,23 @@ describe Ship do
 		expect(ship.name).to eq 'Hawkeye'
 	end
 
-	it 'has been hit' do
-		ship = Ship.new(:length => 5, :name => "Odin")
+	it 'has a status of hit once hit' do
+		ship.hit!
 		expect(ship.status).to eq "hit"
 	end
 
-	
+	it 'has its length reduced by a count of 1 when hit' do
+		ship.hit!
+		expect(ship.length).to eq 4
+	end
+
+	it 'is destroyed when length becomes 0' do
+		sunk_ship = Ship.new(:length => 1, :name => "sunken ship")
+		sunk_ship.hit!
+		expect(sunk_ship.destroyed).to be true
+	end
+
+	xit 'is not destroyed when length is greater than 0' do
+		expect(ship.destroyed?).not_to be true
+	end
 end
