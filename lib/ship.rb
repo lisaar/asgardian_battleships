@@ -17,7 +17,9 @@ class Ship
 
 	def hit!
 		@length -= 1
-		destroyed  if @length == 0
+		puts "Good shooting, you've struck a ship, with 3 casualties" if @length > 0
+ 		destroyed  if @length == 0
+ 		self
 	end
 
 	def status
@@ -25,6 +27,7 @@ class Ship
 	end
 
 	def destroyed
+		puts "KABOOOOM, your ship has been sunk!"
 		@destroyed = true
 	end
 

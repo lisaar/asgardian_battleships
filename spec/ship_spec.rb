@@ -35,7 +35,5 @@ describe Ship do
 		expect(sunk_ship.destroyed).to be true
 	end
 
-	xit 'is not destroyed when length is greater than 0' do
-		expect(ship.destroyed?).not_to be true
-	end
+
 end
