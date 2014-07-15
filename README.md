@@ -9,6 +9,20 @@ Once a ship has been hit across it's entire length, it is then classified as sun
 
 ### Visual aid
 `````````
+####Away board - track of moves
+|    | A | B | C | D | E | F | G | H | I | J |
+| 01 |   |   |   |   |   |   |   |   |   |   |
+| 02 | x | o |   |   |   |   | o |   |   |   |
+| 03 | x |   |   |   |   |   |   |   |   |   |
+| 04 | x |   |   |   |   |   |   | x | x | x |
+| 05 |   |   |   |   |   |   |   |   |   |   |
+| 06 |   |   |   |   | o |   |   |   |   |   |
+| 07 |   |   |   | o |   |   |   |   |   |   |
+| 08 |   |   |   |   |   |   |   |   |   |   |
+| 09 |   |   |   |   |   |   |   |   |   |   |
+| 10 |   |   |   |   |   |   |   |   |   |   |
+
+####Home board - your ships
 |    | A  | B  | C  | D  | E  | F  | G  | H  | I  | J  |
 | 01 | ~  | h2 | h2 | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
 | 02 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
@@ -20,6 +34,8 @@ Once a ship has been hit across it's entire length, it is then classified as sun
 | 08 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
 | 09 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
 | 10 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
+
+
 ``````````
 
 Hawkeye length: 2
