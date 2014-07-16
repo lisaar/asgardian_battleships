@@ -29,16 +29,16 @@ describe Grid do
 			expect(grid.home_grid['A2']).to eq ship
 		end
 
-		it 'only places a ship of that ships length' do
+		xit 'only places a ship of that ships length' do
 			expect(ship.length).to eq grid.max_placement_of(ship)
 		end
 
-		it 'should split our given coordinate into a letter' do
+		xit 'should split our given coordinate into a letter' do
 			coordinate = "A2"
 			expect(grid.passed_letter(coordinate)).to eq "A"
 		end
 
-		it 'should split our given coordinate into a number' do
+		xit 'should split our given coordinate into a number' do
 			coordinate = "A2"
 			expect(grid.passed_number(coordinate)).to eq 2
 		end
@@ -59,12 +59,12 @@ describe Grid do
 			expect(grid.home_grid['B7']).to eq ship
 		end
 
-		xit 'it places the entire ship on the grid horizontally' do
-			coordinate = "A2"
+		it 'it places the entire ship on the grid horizontally' do
+			coordinate = "B2"
 			grid.place_ship_horizontally(coordinate, ship)
 			expect(grid.home_grid['B2']).to eq ship
-			expect(grid.home_grid['C3']).to eq ship
-			expect(grid.home_grid['D4']).to eq ship
+			expect(grid.home_grid['C2']).to eq ship
+			expect(grid.home_grid['D2']).to eq ship
 		end
 
 

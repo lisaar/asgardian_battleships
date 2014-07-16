@@ -34,41 +34,60 @@ class Grid
 		@home_grid[coord] = ship
 	end
 
-	def max_placement_of(ship)
-		ship.length
-	end
+	# def max_placement_of(ship)
+	# 	ship.length
+	# end
 
-	def passed_letter(coordinate)
-		coordinate[0]
-	end
+	# def passed_letter(coordinate)
+	# 	coordinate[0]
+	# end
 
-	def passed_number(coordinate)
-		coordinate[1].to_i
-	end
+	# def passed_number(coordinate)
+	# 	coordinate[1].to_i
+	# end
 
 	def place_ship_vertically(coordinate, ship)
-		passed_letter = passed_letter(coordinate)
-		passed_number = passed_number(coordinate)
+		# passed_letter = passed_letter(coordinate)
+		# passed_number = passed_number(coordinate)
 
-		counter = 0
+		# counter = 0
 
-		while counter < max_placement_of(ship) do
-			current_cell = passed_number + counter
-			coordinate = "#{passed_letter}#{current_cell}"
+		# while counter < max_placement_of(ship) do
+		# 	current_cell = passed_number + counter
+		# 	coordinate = "#{passed_letter}#{current_cell}"
 
-			place_ship(ship, coordinate)
+		# 	place_ship(ship, coordinate)
 
-			counter += 1
+		# 	counter += 1
+		# end
+		# puts 'ship placement successful!'
+
+
+		x,y = coordinate.split("")
+		ship.length.times do
+			place_ship(ship, x + y)
+			y = y.next
 		end
-		puts 'ship placement successful!'
 	end
 
-	# def place_ship_horizontally(coordinate, ship)
-	# 	passed_letter = passed_letter(coordinate)
-	# 	passed_number = passed_number(coordinate)
+	def place_ship_horizontally(coordinate, ship)
+		# passed_letter = passed_letter(coordinate)
+		# passed_number = passed_number(coordinate)
+		# counter = 0
+		# while counter < max_placement_of(ship) do
+		# 	current_cell = ((passed_letter.ord) + counter).chr
+		# 	coordinate = "#{current_cell}#{passed_number}"
+		# 	place_ship(ship, coordinate)
 
-
-	# end
+		# 	counter += 1
+		# end
+		# puts 'ship placement successful!'
+		x,y = coordinate.split("")
+		ship.length.times do
+			place_ship(ship, x + y)
+			x = x.next
+		end
+	end
 end
 
 
