@@ -26,7 +26,7 @@ Once a ship has been hit across it's entire length, it is then classified as sun
 |    | A  | B  | C  | D  | E  | F  | G  | H  | I  | J  |
 | 01 | ~  | h2 | h2 | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
 | 02 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
-| 03 | t3 | t3 | t3 | ~  | fx | f4 | f4 | f4 | ~  | ~  |
+| 03 | ----thor---- | ~  | fx | f4 | f4 | f4 | ~  | ~  |
 | 04 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
 | 05 | ~  | ~  | h3 | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
 | 06 | ~  | ~  | h3 | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
@@ -34,6 +34,11 @@ Once a ship has been hit across it's entire length, it is then classified as sun
 | 08 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
 | 09 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | o5 | ~  | ~  |
 | 10 | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  | ~  |
+
+
+A1|B1|C1
+A2|B2|C2
+A3|B3|C3
 
 
 ``````````
