@@ -1,6 +1,6 @@
 class Ship
 
-	@ships = []
+
 
 	def initialize(options = {})
 		@length = options.fetch(:length, length)
@@ -8,10 +8,6 @@ class Ship
 		@destroyed = false
 	end
 
-	def self.ships
-		@ships
-	end
-	
 
 	def length
 		@length

@@ -13,7 +13,7 @@ describe Game do
 		
 	end
 
-	it 'allows a player to place ships on his grid' do
+	it 'allows a player to see his ships as he palces them on the grid' do
 		
 	end
 
