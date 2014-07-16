@@ -1,6 +1,7 @@
 require 'player'
 
 describe Player do
+
 	it 'has ships' do
 		odin = double :ship
 		player = Player.new
@@ -9,6 +10,6 @@ describe Player do
 	end
 
 	it 'places ships on grid' do
-		
+
 	end
 end
