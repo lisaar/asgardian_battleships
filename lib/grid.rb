@@ -25,7 +25,7 @@ class Grid
 
 		letters.each do |letter|
 			1.upto(letters.length) do |current_number|
-				generic_grid.merge!( {"#{letter}#{current_number}" => :cell})
+				generic_grid.merge!( {"#{letter}#{current_number}" => Cell.new(Water.new)})
 			end
 		end
 	end
