@@ -13,7 +13,7 @@ class Grid
 	end
 
 	def setup_grid
-		generic_grid = []
+		generic_grid = {}
 
 		make_coordinates(generic_grid)
 
@@ -25,7 +25,7 @@ class Grid
 
 		letters.each do |letter|
 			1.upto(letters.length) do |current_number|
-				generic_grid << {"#{letter}#{current_number}" => :cell}
+				generic_grid.merge!( {"#{letter}#{current_number}" => :cell})
 			end
 		end
 	end

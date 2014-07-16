@@ -5,7 +5,7 @@ describe Grid do
 	let(:grid) { Grid.new }
 
 	it 'the grid is an array of hashes' do
-		expect(grid.home_grid.class).to eq Array
+		expect(grid.home_grid.class).to eq Hash
 	end
 
 	it 'will have a cell called A1' do
