@@ -45,7 +45,7 @@ describe Grid do
 
 		it 'it places the entire ship on the grid vertically -A' do
 			coordinate = "A2"
-			grid.place_ship_vertically(coordinate, ship)
+			grid.place ship, on: coordinate, facing: :vertical
 			expect(grid.home_grid['A2']).to eq ship
 			expect(grid.home_grid['A3']).to eq ship
 			expect(grid.home_grid['A4']).to eq ship
@@ -53,7 +53,7 @@ describe Grid do
 
 		it 'it places the entire ship on the grid vertically -B' do
 			coordinate = "B5"
-			grid.place_ship_vertically(coordinate, ship)
+			grid.place ship, on: coordinate, facing: :vertical
 			expect(grid.home_grid['B5']).to eq ship
 			expect(grid.home_grid['B6']).to eq ship
 			expect(grid.home_grid['B7']).to eq ship
@@ -61,23 +61,12 @@ describe Grid do
 
 		it 'it places the entire ship on the grid horizontally' do
 			coordinate = "B2"
-			grid.place_ship_horizontally(coordinate, ship)
+			grid.place ship, on: coordinate
 			expect(grid.home_grid['B2']).to eq ship
 			expect(grid.home_grid['C2']).to eq ship
 			expect(grid.home_grid['D2']).to eq ship
 		end
 
-
-			# We wanted to loop through cells up to the length of our ship
-			# We needed to work out which cell we are currently on (A2, A3, A4)
-			# Current cell needs to be made into a coordinate (so add the letter to the front)
-			# Add the ship to the coordinate
-			# Make sure the loop carries on
-			# puts 'ship placement successfull'
-
-			#  Refactor. Make horizontal stuff it's own method, make add ship own method etc.
-
 	end
-
 
 end
