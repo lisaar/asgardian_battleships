@@ -15,5 +15,8 @@ class Cell
 	def hit_cell!
 		@contents = ShotAtCell.new(@contents.hit!)
 	end
-
+ 
+ 	#def add_ship(name)
+ 		#@contents = ships.select {|ship| name}
+ 	#end
 end

@@ -20,4 +20,5 @@ describe Grid do
 		expect(grid.home_grid["B6"]).to be_an_instance_of Cell
 	end
 
+	
 end

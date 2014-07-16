@@ -27,5 +27,9 @@ describe Cell do
 		expect{ cell_with_ship.hit_cell! }.to raise_error(RuntimeError)
 	end
 
+	xit 'adds a ship to the cell' do
+		expect(cell)
+	end
+
 end
 

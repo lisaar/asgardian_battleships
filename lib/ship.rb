@@ -1,11 +1,17 @@
 class Ship
 
+	@ships = []
 
 	def initialize(options = {})
 		@length = options.fetch(:length, length)
 		@name = options.fetch(:name, name)
 		@destroyed = false
 	end
+
+	def self.ships
+		@ships
+	end
+	
 
 	def length
 		@length
