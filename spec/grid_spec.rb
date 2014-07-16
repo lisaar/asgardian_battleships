@@ -2,7 +2,9 @@ require 'grid'
 
 describe Grid do
 
-	let(:grid) { Grid.new }
+	let(:grid) { Grid.new 					}
+	let(:ship) { double :ship, :length => 3	}
+
 
 	it 'the grid is an array of hashes' do
 		expect(grid.home_grid.class).to eq Hash
@@ -23,21 +25,49 @@ describe Grid do
 	context 'Placing ships' do
 
 		it 'Can have cell with a ship inside' do
-			ship = double :ship
 			grid.place_ship(ship, 'A2')
 			expect(grid.home_grid['A2']).to eq ship
 		end
 
-		it 'it places the entire ship on the grid horizontally' do
+		it 'only places a ship of that ships length' do
+			expect(ship.length).to eq grid.max_placement_of(ship)
 		end
 
-		xit 'only places a ship of that ships length' do
-			ship = double :ship, :length => 3
-			ship.length
-			expect(ship.length).to eq max
+		it 'should split our given coordinate into a letter' do
+			coordinate = "A2"
+			expect(grid.passed_letter(coordinate)).to eq "A"
 		end
-			# Needed to know how long our ship is
-			# Split our given coordinate into a letter and a number
+
+		it 'should split our given coordinate into a number' do
+			coordinate = "A2"
+			expect(grid.passed_number(coordinate)).to eq 2
+		end
+
+		it 'it places the entire ship on the grid vertically -A' do
+			coordinate = "A2"
+			grid.place_ship_vertically(coordinate, ship)
+			expect(grid.home_grid['A2']).to eq ship
+			expect(grid.home_grid['A3']).to eq ship
+			expect(grid.home_grid['A4']).to eq ship
+		end
+
+		it 'it places the entire ship on the grid vertically -B' do
+			coordinate = "B5"
+			grid.place_ship_vertically(coordinate, ship)
+			expect(grid.home_grid['B5']).to eq ship
+			expect(grid.home_grid['B6']).to eq ship
+			expect(grid.home_grid['B7']).to eq ship
+		end
+
+		xit 'it places the entire ship on the grid horizontally' do
+			coordinate = "A2"
+			grid.place_ship_horizontally(coordinate, ship)
+			expect(grid.home_grid['B2']).to eq ship
+			expect(grid.home_grid['C3']).to eq ship
+			expect(grid.home_grid['D4']).to eq ship
+		end
+
+
 			# We wanted to loop through cells up to the length of our ship
 			# We needed to work out which cell we are currently on (A2, A3, A4)
 			# Current cell needs to be made into a coordinate (so add the letter to the front)
