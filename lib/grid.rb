@@ -34,31 +34,20 @@ class Grid
 		@home_grid[coord] = Cell.new(ship)
 	end
 
-	# place (our ship) on (coordinate) facing (horizontal/vertical)
 	def place ship, on: coordinate, facing: :horizontal
-		# Take our coordinate (referred to as: on)
-		# .split it into an array
-		# this outputs ['A', '5']
-		# so assign the first in the array to x
-		# and the second to y
-		# so x = 'A'
-		# y = '5'
-		x,y = on.split("")
-		# for the length of the ship, loop through the following
-		# if ship length 3, do this 3 times.
+		letter, number = on.split("")
+
 		ship.length.times do
-			# our place ship function above, passing ship and coordinates
-			# x + y works because it is adding two strings, so 'A'+'5' = 'A5'
-			place_ship(ship, x + y)
-			# this is a shorthand if statement
-			# so if facing == :horizontal returns true or false booleans
-			# if true, deal with x, or the letter.
-			# if false (vertical), deal with y, or the number.
-			#  .next goes to the next number / letter in the alphabet
-			facing == :horizontal ? x = x.next : y = y.next
+			place_ship(ship, letter + number)
+			if facing == :horizontal
+				letter = letter.next
+			else
+				number = number.next
+			end
 		end
 		puts 'ship placement successful!'
 	end
+
 
 end
 
