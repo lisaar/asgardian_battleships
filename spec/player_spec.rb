@@ -1,5 +1,5 @@
 require 'player'
-require 'grid'
+
 
 describe Player do
 
@@ -10,12 +10,18 @@ describe Player do
 	# 	expect(player.ships).to eq [odin]
 	# end
 
-	it 'places ships on grid' do
-		ship = double(:ship, :length => 2, :name => ship)
-		player = Player.new
-		grid = Grid.new
-		player.place_ship_on_grid ship, on: "B2", facing: :horizontal
-		expect(
-		# place ship, on: coordinate, facing: :horizontal
-	end
+	# it 'initalizes a player with a grid' do
+	# grid = double :grid
+	# player = Player.new(grid)
+	# expect(player).to receive(:grid)
+	# end
+
+
+	# xit 'says where they want to place ships' do
+	# 	player = Player.new
+	# 	ship = double :ship
+	# 	"B5" = double "cell"
+	# 	player.place_ships(ship, "B5", horizontal)
+	# 	expect(player.place_ships)
+	# end
 end
