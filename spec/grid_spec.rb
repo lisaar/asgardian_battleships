@@ -66,8 +66,8 @@ describe Grid do
 			expect(grid.home_grid['C2']).to eq ship
 			expect(grid.home_grid['D2']).to eq ship
 		end
-
-
 	end
-
 end
+
+#raise error when ships are not placed fully on the grid
+#raise error when ships are placed on top of each other.
