@@ -67,6 +67,7 @@ describe Grid do
 			expect(grid.home_grid['D2']).to eq ship
 		end
 
+
 	end
 
 end
