@@ -24,9 +24,14 @@ describe Grid do
 
 	context 'Placing ships' do
 
+		# before do
+		# 	grid.place_ship(ship, 'A2')
+		# end
+
 		it 'Can have cell with a ship inside' do
 			grid.place_ship(ship, 'A2')
-			expect(grid.home_grid['A2']).to eq ship
+			expect(grid.home_grid['A2'].contents).to eq ship
+
 		end
 
 		xit 'only places a ship of that ships length' do
@@ -46,25 +51,25 @@ describe Grid do
 		it 'it places the entire ship on the grid vertically -A' do
 			coordinate = "A2"
 			grid.place ship, on: coordinate, facing: :vertical
-			expect(grid.home_grid['A2']).to eq ship
-			expect(grid.home_grid['A3']).to eq ship
-			expect(grid.home_grid['A4']).to eq ship
+			expect(grid.home_grid['A2'].contents).to eq ship
+			expect(grid.home_grid['A3'].contents).to eq ship
+			expect(grid.home_grid['A4'].contents).to eq ship
 		end
 
 		it 'it places the entire ship on the grid vertically -B' do
 			coordinate = "B5"
 			grid.place ship, on: coordinate, facing: :vertical
-			expect(grid.home_grid['B5']).to eq ship
-			expect(grid.home_grid['B6']).to eq ship
-			expect(grid.home_grid['B7']).to eq ship
+			expect(grid.home_grid['B5'].contents).to eq ship
+			expect(grid.home_grid['B6'].contents).to eq ship
+			expect(grid.home_grid['B7'].contents).to eq ship
 		end
 
 		it 'it places the entire ship on the grid horizontally' do
 			coordinate = "B2"
 			grid.place ship, on: coordinate
-			expect(grid.home_grid['B2']).to eq ship
-			expect(grid.home_grid['C2']).to eq ship
-			expect(grid.home_grid['D2']).to eq ship
+			expect(grid.home_grid['B2'].contents).to eq ship
+			expect(grid.home_grid['C2'].contents).to eq ship
+			expect(grid.home_grid['D2'].contents).to eq ship
 		end
 	end
 end

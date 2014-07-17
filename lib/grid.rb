@@ -31,6 +31,7 @@ class Grid
 	end
 
 	def place_ship(ship, coord)
+		# @home_grid[coord] = ship
 		@home_grid[coord] = Cell.new(ship)
 	end
 
