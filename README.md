@@ -1,11 +1,11 @@
 ![Asgard](http://img1.wikia.nocookie.net/__cb20131207032431/disney/images/0/0b/Asgard.jpg "Asgard")
 
 ###The Rules of the game
-The game is made up of two players. They each have 5 ships of different lengths. They organise their ships on their home grid, which is 10x10 (100 cells). The ships can be next to each other but two ships cannot share one cell. Also, ships can only be placed horizontally or vertically but cannot be placed diagonally. They also have an away grid where they will record their attacks.
+The game is made up of two players. Players each have 5 ships of different lengths. Players organise their ships on their home grid, which is 10x10 (100 cells). The ships can be next to each other but two ships cannot share one cell. Also, ships can only be placed horizontally or vertically but cannot be placed diagonally. Players also have an away grid where they will record their attacks.
 
-Each player takes a turn to attack their opponents ships on the grid. You may not attack a cell that you have previously attacked. If the coordinates are the same as where an opponents' ship is placed they get a response of "hit" otherwise they will get a response of "miss". Each response is recorded on their away grid.
+Each player takes a turn to attack his opponents ships on the grid. You may not attack a cell that you have previously attacked. If the coordinates are the same as where an opponent's ship is placed they get a response of "hit" otherwise they will get a response of "miss". Each response is recorded on the player's away grid.
 
-Once a ship has been hit across it's entire length, it is then classified as sunk. Once a player has sunk all of their opponents ships the game is over and the player wins.
+Once a ship has been hit across it's entire length, it is then classified as sunk. Once a player has sunk all of his opponents ships the game is over and that player wins.
 
 ### Visual aid
 `````````
@@ -78,11 +78,11 @@ Each player gets one of each type of ship
 	1 x length 4
 	1 x length 5
 
-A player has to place his ships on the board (or this can be auto generated)
+A player has to place his ships on the board (or this can be auto-generated)
 	horizontally or vertically (not diagnoally)
 
 
-Allow each player to shoot at the opponents board in turn
+Allow each player to shoot at the opponent's board in turn
 	The player who is shooting has to give a letter and number that matches the grid's row and column dimensions
 	The coordinates are marked on the players away grid and the opponnents home grid
 	The cell responds as a hit or a miss
@@ -112,11 +112,11 @@ Allow each player to shoot at the opponents board in turn
 ####Players
 | Responsibility     | Collaborators 					 |
 | ------------------ | --------------------------------- |
-| Organises (on grid) | Ships / Grid |
+| Place (on grid) | Ships / Grid |
 | Has | Ships |
 | Attacks | Ships |
-| Knows which ships are sunk | Ships/grid
-| Knows which ships are left | Ships/grid
+| Looks into opponents board to see where he shot | grid
+| Looks into his board to see which ships are left| Ships/grid
 
 
 ####Ships
@@ -126,6 +126,13 @@ Allow each player to shoot at the opponents board in turn
 | Receives hits from | cell |
 | Knows its location on | grid |
 
+
+####Game
+| Responsibility     | Collaborators 					 |
+| ------------------ | --------------------------------- |
+| Can initialize a game with 2  | players |
+| Can initialize a board with | grids |
+| Can initialize | ships|
 
 ### Methods overview...
 ####Grid
