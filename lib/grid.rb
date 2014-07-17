@@ -49,7 +49,9 @@ class Grid
 		puts 'ship placement successful!'
 	end
 
-
+	def check_coordinate(coordinate)
+		@home_grid.has_key?(coordinate)
+	end
 end
 
 

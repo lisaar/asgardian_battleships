@@ -4,6 +4,7 @@ describe Grid do
 
 	let(:grid) { Grid.new 					}
 	let(:ship) { double :ship, :length => 3	}
+	# let(:ship) { Ship.new(:length => 3) }
 
 
 	it 'the grid is an array of hashes' do
@@ -72,7 +73,40 @@ describe Grid do
 			expect(grid.home_grid['D2'].contents).to eq ship
 		end
 	end
+
+	context 'Validation' do
+
+		it 'knows whether a co-ordinate is valid' do
+			coordinate = "A7"
+			expect(grid.check_coordinate(coordinate)).to be true
+		end
+
+		it 'knows whether a co-ordinate is not valid' do
+			coordinate = "N6"
+			expect(grid.check_coordinate(coordinate)).to be false
+		end
+
+		
+
+	end
+
 end
 
 #raise error when ships are not placed fully on the grid
 #raise error when ships are placed on top of each other.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
