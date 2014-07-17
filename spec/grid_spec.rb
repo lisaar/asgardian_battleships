@@ -86,7 +86,45 @@ describe Grid do
 			expect(grid.check_coordinate(coordinate)).to be false
 		end
 
-		
+		xit 'knows whether a ship fits in the grid' do
+			coordinate = "A2"
+			orientaton = :horizontal
+			# expect(grid.check_wheater_ship_fits_when_horizontal(ship, coordinate, orientaton)).to be true
+			expect(grid.ensure_inclusion_of(coordinate).in_range(grid))		
+		end
+
+		it 'will construct a list of the coordinates that the ship wants to use (horizontal)' do
+			coordinate = "A2"
+			orientaton = :horizontal
+			expect(grid.ship_cells(coordinate, ship, orientaton)).to eq ['A2', 'B2', 'C2']
+		end
+
+		it 'will construct a list of the coordinates that the ship wants to use (vertical)' do
+			coordinate = "A2"
+			orientaton = :vertical
+			expect(grid.ship_cells(coordinate, ship, orientaton)).to eq ['A2', 'A3', 'A4']
+		end
+
+		it 'will check these picked out coordinates are actually valid coordinates' do
+			cell_list = ['A2', 'A3', 'A4']
+			expect(grid.verify_ship_cells(cell_list, ship)).to be true
+		end
+
+		it 'will check these picked out coordinates are actually NOT valid coordinates' do
+			cell_list = ['Z10', 'Z11', 'Z12']
+			grid.ship_cells("Z9", ship, :vertical)
+
+			expect(grid.verify_ship_cells(cell_list, ship)).to be false
+		end
+
+
+		# will go through the cells that the ship wants to go into
+		# it will check each of those cells to see if they exist or not
+		# if they exist , put them into an array so we can check them
+		# check if the finished array matches the length of the ship - ie, that we have enough checked cells to fit the ship in
+		# if we do, go through our selected cells and bung a ship in em.
+		# if we don't, tell them it's rubbish.
+
 
 	end
 

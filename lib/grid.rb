@@ -1,3 +1,5 @@
+require_relative 'cell'
+
 class Grid
 
 	def initialize
@@ -35,15 +37,60 @@ class Grid
 		@home_grid[coord] = Cell.new(ship)
 	end
 
-	def place ship, on: coordinate, facing: :horizontal
-		letter, number = on.split("")
+	def ship_cells(coordinate, ship, orientaton)
+		@ship_cells_list = []
+
+		letter, number = coordinate.split("")
 
 		ship.length.times do
-			place_ship(ship, letter + number)
-			if facing == :horizontal
+
+			coord = letter + number
+			@ship_cells_list << coord
+
+			if orientaton == :horizontal
 				letter = letter.next
 			else
 				number = number.next
+			end
+
+		end
+		@ship_cells_list
+	end
+
+	def verify_ship_cells(cell_list, ship)
+
+		cell_list.keep_if do |single_ship_element|
+			check_coordinate(single_ship_element)
+		end
+
+		cell_list.count == ship.length
+	end
+
+	def place ship, on: coordinate, facing: :horizontal
+
+		letter, number = on.split("")
+
+		ship.length.times do
+
+			coordinate = letter + number
+
+			if check_coordinate(coordinate) == true
+				puts 'Placed on:'
+				puts coordinate
+				puts
+
+				place_ship(ship, coordinate)
+
+				if facing == :horizontal
+					letter = letter.next
+				else
+					number = number.next
+				end
+
+			else
+
+				puts 'coordinate does not exist'
+
 			end
 		end
 		puts 'ship placement successful!'
@@ -52,6 +99,12 @@ class Grid
 	def check_coordinate(coordinate)
 		@home_grid.has_key?(coordinate)
 	end
+
+
+
+	# def check_wheater_ship_fits_when_horizontal(ship, coordinate, orientation)
+	# 	true
+	# end
 end
 
 
