@@ -35,20 +35,6 @@ describe Grid do
 
 		end
 
-		xit 'only places a ship of that ships length' do
-			expect(ship.length).to eq grid.max_placement_of(ship)
-		end
-
-		xit 'should split our given coordinate into a letter' do
-			coordinate = "A2"
-			expect(grid.passed_letter(coordinate)).to eq "A"
-		end
-
-		xit 'should split our given coordinate into a number' do
-			coordinate = "A2"
-			expect(grid.passed_number(coordinate)).to eq 2
-		end
-
 		it 'it places the entire ship on the grid vertically -A' do
 			coordinate = "A2"
 			grid.place ship, on: coordinate, facing: :vertical
@@ -130,12 +116,20 @@ describe Grid do
 
 end
 
-#raise error when ships are not placed fully on the grid
-#raise error when ships are placed on top of each other.
 
+# xit 'only places a ship of that ships length' do
+# 	expect(ship.length).to eq grid.max_placement_of(ship)
+# end
 
+# xit 'should split our given coordinate into a letter' do
+# 	coordinate = "A2"
+# 	expect(grid.passed_letter(coordinate)).to eq "A"
+# end
 
-
+# xit 'should split our given coordinate into a number' do
+# 	coordinate = "A2"
+# 	expect(grid.passed_number(coordinate)).to eq 2
+# end
 
 
 
